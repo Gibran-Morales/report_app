@@ -8,21 +8,11 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userData = UserManager.getUserData();
-    if (userData == null) {
-      return const Scaffold(
-        body: Center(
-          child: Text(
-            'No hay datos de usuario disponibles',
-            style: TextStyle(fontSize: 18, color: Color.fromARGB(255, 57, 54, 244)),
-          ),
-        ),
-      );
-    }
+    final userData = UserManager.getUserData()!; 
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Menú Principal'),
+        title: const Text('Menu Principal'),
         backgroundColor: const Color.fromRGBO(142, 21, 21, 1),
         foregroundColor: Colors.white,
       ),
@@ -51,11 +41,34 @@ class MenuScreen extends StatelessWidget {
                   ),
                 );
               },
+             style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromRGBO(142, 21, 21, 1),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+              ),
               child: const Text('Ver Datos'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AppReport(),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: const Color.fromRGBO(142, 21, 21, 1),
+                side: const BorderSide(color: Color.fromRGBO(142, 21, 21, 1)),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+              ),
+              child: const Text('Ver Reportes'),
             ),
           ],
         ),
-      ),
-    );
-  }
+     ),
+);
+}
 }

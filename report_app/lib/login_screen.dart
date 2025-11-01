@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 30),
 
               CustomInput(
-                labelText: 'Nombre',
+                labelText: 'Usuario',
                 prefixIcon: Icons.person,
                 controller: _nameController,
               ),
@@ -68,14 +68,14 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
 
               BotonPersonalizado(
-                texto: 'Iniciar Sesion',
+                texto: 'Login',
                 onPressed: () {
                   final name = _nameController.text.trim();
                   final password = _passwordController.text.trim();
 
                   if (name.isEmpty || password.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Ingresa nombre y contraseña')),
+                      const SnackBar(content: Text('Ingresa usuario y contraseña')),
                     );
                     return;
                   }
