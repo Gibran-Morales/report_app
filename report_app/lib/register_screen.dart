@@ -50,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Sign up",
+                "Login",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 30),
@@ -63,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16),
 
               CustomInput(
-                labelText: 'Email',
+                labelText: 'Correo Electrónico',
                 prefixIcon: Icons.email,
                 keyboardType: TextInputType.emailAddress,
                 controller: _emailController,
@@ -71,7 +71,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 16),
 
               CustomInput(
-                labelText: 'Teléfono',
+                labelText: 'Telefono',
                 prefixIcon: Icons.phone,
                 keyboardType: TextInputType.phone,
                 controller: _phoneController,
@@ -105,21 +105,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                   if (name.isEmpty || email.isEmpty || phone.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Ingresa todos los datos')),
+                      const SnackBar(content: Text('Por favor, ingresa todos los datos')),
                     );
                     return;
                   }
 
                   if (!_isValidEmail(email)) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Correo electrónico invalido')),
+                      const SnackBar(content: Text('Correo electronico invalido')),
                     );
                     return;
                   }
 
                   if (!_isValidPhone(phone)) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Número de telefono invalido')),
+                      const SnackBar(content: Text('Numero de telefono invalido (debe ser 10 digitos numericos)')),
                     );
                     return;
                   }

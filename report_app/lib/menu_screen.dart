@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'data_screen.dart';
-import 'app_report.dart';
+import 'reports_screen.dart';
 import 'user_manager.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -54,7 +54,7 @@ class MenuScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const AppReport(),
+                    builder: (context) => ReportsScreen(),
                   ),
                 );
               },
